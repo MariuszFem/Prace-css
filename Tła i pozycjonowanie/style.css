@@ -8,7 +8,6 @@ html {
     scroll-behavior: smooth;
 }
 
-/* Część A - Tła i gradienty */
 body {
     background: linear-gradient(180deg, #eef2f3 0%, #8e9eab 100%);
     background-attachment: fixed;
@@ -33,7 +32,6 @@ body {
     color: white;
 }
 
-/* Część B - Pozycjonowanie */
 .sticky-nav {
     position: sticky;
     top: 0;
@@ -120,7 +118,6 @@ body {
     opacity: 1;
 }
 
-/* Część C - Lightbox */
 .lightbox {
     position: fixed;
     top: 0; left: 0; width: 100%; height: 100%;
@@ -150,7 +147,6 @@ body {
     text-decoration: none;
 }
 
-/* Grid Layout */
 .gallery-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -161,9 +157,10 @@ body {
 section { padding: 60px 20px; max-width: 1100px; margin: 0 auto; }
 video, audio { margin-top: 20px; }
 
-/* UKRYTE KOMENTARZE:
+/
    - Zastosowano background-attachment: fixed dla efektu głębi tła.
    - Pozycjonowanie absolute badge'a i overlay'a względem relative .media-card.
    - Fixed sidebar i przycisk TOP z wysokim z-index.
    - Sticky nav blokuje się na górze okna.
+
 */
