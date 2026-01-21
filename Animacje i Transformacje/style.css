@@ -1,0 +1,171 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    padding: 40px 0;
+}
+
+h2 {
+    border-bottom: 2px solid #ddd;
+    margin: 40px 0 20px;
+    padding-bottom: 10px;
+}
+
+.showcase-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.box {
+    width: 150px;
+    height: 150px;
+    background-color: #3498db;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-radius: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 0.9rem;
+    padding: 10px;
+}
+
+
+.trans-color {
+    transition: background-color 0.4s ease;
+}
+.trans-color:hover {
+    background-color: #e67e22;
+}
+
+.trans-scale {
+    transition: transform 0.3s ease-in-out;
+}
+.trans-scale:hover {
+    transform: scale(1.2);
+}
+
+.trans-ease {
+    transition: all 0.5s ease-in-out;
+}
+.trans-ease:hover {
+    border-radius: 50%;
+    transform: translateY(-10px);
+}
+
+.trans-bezier {
+    transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.trans-bezier:hover {
+    transform: rotate(10deg) scale(1.1);
+}
+
+.cascade-container:hover .cascade-item {
+    transform: translateY(-10px);
+}
+
+.cascade-item {
+    width: 100px;
+    height: 40px;
+    background: #9b59b6;
+    margin: 5px;
+    border-radius: 5px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+}
+
+.cascade-item:nth-child(1) { transition-delay: 0.1s; }
+.cascade-item:nth-child(2) { transition-delay: 0.2s; }
+.cascade-item:nth-child(3) { transition-delay: 0.3s; }
+
+
+.tf-translate:hover { transform: translate(20px, -20px); }
+.tf-rotate:hover { transform: rotate(45deg); }
+.tf-scale:hover { transform: scale(0.8, 1.5); }
+.tf-skew:hover { transform: skew(20deg); }
+
+.tf-combo:hover {
+    transform: translate(10px, 10px) rotate(15deg) scale(1.1) skew(5deg);
+}
+
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateY(-30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.slide-in-text {
+    animation: slideIn 1s ease-out forwards;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); opacity: 1; }
+    100% { transform: scale(1.1); opacity: 0.7; }
+}
+
+.pulse-element {
+    width: 80px;
+    height: 80px;
+    background-color: #e74c3c;
+    border-radius: 50%;
+    animation: pulse 0.8s infinite alternate;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.spinner {
+    width: 60px;
+    height: 60px;
+    border: 8px solid #ddd;
+    border-top: 8px solid #3498db;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes multiStage {
+    0% { background-color: #34495e; transform: translateX(0); }
+    50% { background-color: #2ecc71; transform: translateX(50px) rotate(90deg); border-radius: 20%; }
+    100% { background-color: #34495e; transform: translateX(0); }
+}
+
+.multi-stage {
+    width: 60px;
+    height: 60px;
+    background-color: #34495e;
+    animation: multiStage 3s ease-in-out infinite;
+}
+
+.animation-unit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+/*
+   - Transforms: Użyto transform-origin domyślnego (center).
+   - Keyframes: Wykorzystano animation-direction: alternate dla efektu płynnego powrotu (pulsowanie).
+   - Wydajność: Animacje oparte głównie na transform i opacity, co nie obciąża procesora.
+*/
