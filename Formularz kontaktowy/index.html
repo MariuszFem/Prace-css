@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formularz Rejestracyjny</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <form action="#" method="post" enctype="multipart/form-data">
+
+        <fieldset>
+            <legend>Dane osobowe</legend>
+
+            <div class="field-container">
+                <label for="fullname" class="required">Imię i nazwisko</label>
+                <input type="text" id="fullname" name="fullname" required autocomplete="name" placeholder="Jan Kowalski">
+                <span class="status-icon"></span>
+            </div>
+
+            <div class="field-container">
+                <label for="email" class="required">Email</label>
+                <input type="email" id="email" name="email" required autocomplete="email" 
+                       pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" placeholder="twoj@email.pl">
+                <span class="status-icon"></span>
+            </div>
+
+            <div class="field-container">
+                <label for="birthdate" class="required">Data urodzenia</label>
+                <input type="date" id="birthdate" name="birthdate" required>
+                <span class="status-icon"></span>
+            </div>
+
+            <div class="field-container">
+                <label for="password" class="required">Hasło</label>
+                <input type="password" id="password" name="password" required minlength="8" placeholder="min. 8 znaków">
+                <span class="status-icon"></span>
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>Preferencje użytkownika</legend>
+
+            <p>Płeć:</p>
+            <div class="custom-radio-group">
+                <input type="radio" id="male" name="gender" value="male">
+                <label for="male">Mężczyzna</label>
+
+                <input type="radio" id="female" name="gender" value="female">
+                <label for="female">Kobieta</label>
+            </div>
+
+            <p>Zainteresowania:</p>
+            <div class="custom-check-group">
+                <input type="checkbox" id="sport" name="interests" value="sport">
+                <label for="sport">Sport</label>
+
+                <input type="checkbox" id="music" name="interests" value="music">
+                <label for="music">Muzyka</label>
+            </div>
+
+            <div class="field-container">
+                <label for="country" class="required">Kraj:</label>
+                <select id="country" name="country" required>
+                    <option value="">-- wybierz kraj --</option>
+                    <option value="pl">Polska</option>
+                    <option value="de">Niemcy</option>
+                    <option value="fr">Francja</option>
+                    <option value="es">Hiszpania</option>
+                    <option value="uk">Wielka Brytania</option>
+                    <option value="us">USA</option>
+                </select>
+            </div>
+
+            <div class="field-container">
+                <label for="experience_range">Poziom doświadczenia:</label>
+                <input type="range" id="experience_range" name="experience" min="0" max="10" step="1">
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>Dodatkowe informacje</legend>
+
+            <div class="field-container">
+                <label for="cv">Prześlij CV (PDF lub DOC):</label>
+                <input type="file" id="cv" name="cv" accept=".pdf, .doc">
+            </div>
+
+            <div class="field-container">
+                <label for="message">Wiadomość:</label>
+                <textarea id="message" name="message" rows="5" maxlength="500" placeholder="Twoja wiadomość..."></textarea>
+            </div>
+
+            <div class="field-container">
+                <input type="checkbox" id="terms" name="terms" required>
+                <label for="terms" class="required">Akceptuję regulamin</label>
+            </div>
+
+        </fieldset>
+
+        <div class="button-group">
+            <button type="submit">Wyślij rejestrację</button>
+            <button type="reset">Resetuj</button>
+        </div>
+
+    </form>
+
+</body>
+</html>
